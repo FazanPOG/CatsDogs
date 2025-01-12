@@ -39,13 +39,22 @@ namespace _Project.Game
             var skinService = Container.Resolve<ISkinService>();
             var context = Container.Resolve<MonoBehaviourContext>();
             var player = Container.Resolve<Player>();
+            var level = Container.Resolve<Level>();
             var levelRewardService = Container.Resolve<ILevelRewardService>();
 
             foreach (var currencyView in _currencyViews)
                 new CurrencyViewPresenter(currencyView, gameplayDataProvider.GameplayDataProxy.MoneyAmount, _spriteReferences, gameStateProvider);
             
             new TapToStartViewPresenter(_tapToStartView, gameStateMachine);
-            new LevelProgressViewPresenter(_levelProgressView, gameplayDataProvider.GameplayDataProxy.LevelNumber, player.LevelProgress);
+            
+            var levelProgressViewPresenter = new LevelProgressViewPresenter(
+                _levelProgressView, 
+                gameplayDataProvider.GameplayDataProxy.LevelNumber, 
+                level.FinishChunk,
+                player.transform);
+
+            Container.Bind<ITickable>().To<LevelProgressViewPresenter>().FromInstance(levelProgressViewPresenter).AsCached().NonLazy();
+            
             new ShopPopupViewPresenter(
                 _shopButton, 
                 _shopPopupView, 
@@ -56,6 +65,7 @@ namespace _Project.Game
                 adService, 
                 skinService,
                 context);
+            
             new FortuneWheelPopupViewPresenter(
                 _fortuneWheelPopupView,
                 _wheelRewardConfigs,

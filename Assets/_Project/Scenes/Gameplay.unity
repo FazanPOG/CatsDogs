@@ -9424,7 +9424,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -9782,7 +9783,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1b9bf2f1a216a9a448bd6bb1882d0d1f, type: 2}
   m_sharedMaterial: {fileID: -2891565013705416496, guid: 1b9bf2f1a216a9a448bd6bb1882d0d1f, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: -2891565013705416496, guid: 1b9bf2f1a216a9a448bd6bb1882d0d1f, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -13175,7 +13177,9 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1b9bf2f1a216a9a448bd6bb1882d0d1f, type: 2}
   m_sharedMaterial: {fileID: -2891565013705416496, guid: 1b9bf2f1a216a9a448bd6bb1882d0d1f, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: -2891565013705416496, guid: 1b9bf2f1a216a9a448bd6bb1882d0d1f, type: 2}
+  - {fileID: 0}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -14940,14 +14944,6 @@ PrefabInstance:
     - target: {fileID: 4855209736259025573, guid: c1ae6481e10213346bd246f30318846b, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7601741833483659763, guid: c1ae6481e10213346bd246f30318846b, type: 3}
-      propertyPath: _sideMoveSpeed
-      value: 12.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7601741833483659763, guid: c1ae6481e10213346bd246f30318846b, type: 3}
-      propertyPath: _slideMoveSpeed
-      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

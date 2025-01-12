@@ -77,7 +77,7 @@ namespace _Project.Gameplay
         {
             var level = Container.Resolve<Level>();
             
-            _player.Init(level);
+            _player.Init();
             _cameraSystem.Follow(_player.transform);
 
             Container.Bind<Player>().FromInstance(_player).AsSingle().NonLazy();
