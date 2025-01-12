@@ -1,0 +1,86 @@
+﻿using System;
+using System.Collections.Generic;
+using _Project.API;
+using _Project.Data;
+using _Project.Gameplay;
+using _Project.UI;
+using _Project.Utility;
+using UnityEngine;
+using Zenject;
+
+namespace _Project.Game
+{
+    public class UIInstaller : MonoInstaller
+    {
+        private const int FORTUNE_WHEEL_REWARD_COUNT = 6;
+        
+        [Header("Configs")]
+        [SerializeField] private SpriteReferencesConfig _spriteReferences;
+        [SerializeField] private SkinShopConfig _shopConfig;
+        [SerializeField] private List<FortuneWheelRewardConfig> _wheelRewardConfigs;
+        [Header("Prefabs")] 
+        [SerializeField] private SelectSkinButtonView _skinButtonPrefab;
+        [Header("HUD")]
+        [SerializeField] private CurrencyView[] _currencyViews;
+        [SerializeField] private ButtonTextView _tapToStartView;
+        [SerializeField] private LevelProgressView _levelProgressView;
+        [SerializeField] private ButtonTextView _shopButton;
+        [Header("Popups")]
+        [SerializeField] private ShopPopupView _shopPopupView;
+        [SerializeField] private FortuneWheelPopupView _fortuneWheelPopupView;
+        [SerializeField] private ChestsRewardPopupView _chestsRewardPopupView;
+
+        public override void InstallBindings()
+        {
+            var gameplayDataProvider = Container.Resolve<IGameplayDataProvider>();
+            var gameStateMachine = Container.Resolve<IGameStateMachine>();
+            var gameStateProvider = Container.Resolve<IGameStateProvider>();
+            var adService = Container.Resolve<IADService>();
+            var skinService = Container.Resolve<ISkinService>();
+            var context = Container.Resolve<MonoBehaviourContext>();
+            var player = Container.Resolve<Player>();
+            var levelRewardService = Container.Resolve<ILevelRewardService>();
+
+            foreach (var currencyView in _currencyViews)
+                new CurrencyViewPresenter(currencyView, gameplayDataProvider.GameplayDataProxy.MoneyAmount, _spriteReferences, gameStateProvider);
+            
+            new TapToStartViewPresenter(_tapToStartView, gameStateMachine);
+            new LevelProgressViewPresenter(_levelProgressView, gameplayDataProvider.GameplayDataProxy.LevelNumber, player.LevelProgress);
+            new ShopPopupViewPresenter(
+                _shopButton, 
+                _shopPopupView, 
+                _shopConfig, 
+                _skinButtonPrefab, 
+                gameplayDataProvider, 
+                gameStateProvider,
+                adService, 
+                skinService,
+                context);
+            new FortuneWheelPopupViewPresenter(
+                _fortuneWheelPopupView,
+                _wheelRewardConfigs,
+                _spriteReferences,
+                gameplayDataProvider,
+                gameStateProvider,
+                gameStateMachine,
+                levelRewardService, 
+                adService,
+                context);
+
+            new ChestsRewardPopupViewPresenter(
+                _chestsRewardPopupView, 
+                _spriteReferences, 
+                gameplayDataProvider, 
+                gameStateMachine, 
+                gameStateProvider,
+                levelRewardService,
+                adService);
+        }
+
+        private void OnValidate()
+        {
+            if (_wheelRewardConfigs.Count != FORTUNE_WHEEL_REWARD_COUNT)
+                throw new Exception($"The number of wheel reward configurations ({_wheelRewardConfigs.Count}) does not match the expected count ({FORTUNE_WHEEL_REWARD_COUNT}).");
+        }
+    }
+}

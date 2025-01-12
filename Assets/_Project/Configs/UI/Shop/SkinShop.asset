@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 227fc185189c46d0be05c50ef77e727d, type: 3}
+  m_Name: SkinShop
+  m_EditorClassIdentifier: 
+  _unlockSkinPrice: 150
+  _adRewardAmount: 100
+  _skinConfigs:
+  - {fileID: 11400000, guid: e1a319da098bc21449ec46840b0b5019, type: 2}
+  - {fileID: 11400000, guid: 9a974286f011dc74d90201844005aa43, type: 2}
+  - {fileID: 11400000, guid: 9fb6aaaee0eae1341975e27719844ff4, type: 2}
+  - {fileID: 11400000, guid: 90a454ba998addc4497e12277c429431, type: 2}
+  - {fileID: 11400000, guid: eb3729e1902745147b2476ab7e204b0e, type: 2}
+  - {fileID: 11400000, guid: 9388a1c2ed3eef14797a68ac25874137, type: 2}
+  - {fileID: 11400000, guid: fd668d7635543b44984aa1c96a4cf250, type: 2}
+  - {fileID: 11400000, guid: f0abb98e7bbc91c44a415ed6cd50835a, type: 2}
+  - {fileID: 11400000, guid: fa7ffe66beb327d4c9345a8e3a9c4ac3, type: 2}
