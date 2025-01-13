@@ -41,6 +41,7 @@ namespace _Project.Game
             var player = Container.Resolve<Player>();
             var level = Container.Resolve<Level>();
             var levelRewardService = Container.Resolve<ILevelRewardService>();
+            var gameplayConfig = Container.Resolve<GameplayConfig>();
 
             foreach (var currencyView in _currencyViews)
                 new CurrencyViewPresenter(currencyView, gameplayDataProvider.GameplayDataProxy.MoneyAmount, _spriteReferences, gameStateProvider);
@@ -59,6 +60,7 @@ namespace _Project.Game
                 _shopButton, 
                 _shopPopupView, 
                 _shopConfig, 
+                gameplayConfig.SkinConfigs,
                 _skinButtonPrefab, 
                 gameplayDataProvider, 
                 gameStateProvider,

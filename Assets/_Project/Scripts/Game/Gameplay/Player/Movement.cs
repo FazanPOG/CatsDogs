@@ -1,4 +1,5 @@
 ﻿using _Project.Utils;
+using R3;
 using UnityEngine;
 
 namespace _Project.Gameplay
@@ -11,9 +12,11 @@ namespace _Project.Gameplay
         private readonly InputHandler _inputHandler;
         private readonly PlayerConfig _config;
         private readonly Transform _playerTransform;
+        private readonly ReactiveProperty<bool> _canMove = new ReactiveProperty<bool>();
 
-        private bool _canMove;
         private bool _canSlide;
+
+        public ReadOnlyReactiveProperty<bool> OnMove => _canMove;
         
         public Movement(InputHandler inputHandler, PlayerConfig config, Transform playerTransform)
         {
@@ -24,7 +27,7 @@ namespace _Project.Gameplay
 
         public void Enable()
         {
-            _canMove = true;
+            _canMove.Value = true;
             _canSlide = true;
         }
         
@@ -38,7 +41,7 @@ namespace _Project.Gameplay
             if (_inputHandler.IsPressing && _canSlide)
                 Slide();
             
-            if(_canMove)
+            if(_canMove.CurrentValue)
                 MoveForward();
         }
 

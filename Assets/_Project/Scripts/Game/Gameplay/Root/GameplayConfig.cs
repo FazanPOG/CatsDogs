@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using _Project.UI;
+using UnityEngine;
 
 namespace _Project.Gameplay
 {
@@ -6,7 +7,10 @@ namespace _Project.Gameplay
     public class GameplayConfig : ScriptableObject
     {
         [SerializeField] private Level[] _levelPrefabs;
+        [SerializeField] private SkinConfig[] _skinConfigs;
 
         public Level[] LevelPrefabs => _levelPrefabs;
+
+        public SkinConfig[] SkinConfigs => _skinConfigs;
     }
 }

@@ -8,6 +8,7 @@ namespace _Project.Gameplay
         [Header("Settings")]
         [SerializeField, Range(0.01f, 50f)] private float _forwardMoveSpeed = 1f;
         [SerializeField, Range(0.01f, 50f)] private float _slideMoveSpeed = 1f;
+        [SerializeField, Range(0f, 1f)] private float _initialMorphValue = 0.5f;
         [Header("View")] 
         [SerializeField] private AnimalView[] _animalViewPrefabs;
 
@@ -15,6 +16,8 @@ namespace _Project.Gameplay
 
         public float SlideMoveSpeed => _slideMoveSpeed;
 
+        public float InitialMorphValue => _initialMorphValue;
+        
         public AnimalView[] AnimalViewPrefabs => _animalViewPrefabs;
     }
 }

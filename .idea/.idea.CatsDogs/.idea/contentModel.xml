@@ -88,9 +88,11 @@
                   </e>
                 </e>
                 <e p="Player" t="Include">
+                  <e p="Animal.cs" t="Include" />
                   <e p="AnimalView.cs" t="Include" />
                   <e p="Movement.cs" t="Include" />
                   <e p="Player.cs" t="Include" />
+                  <e p="PlayerAnimalMorph.cs" t="Include" />
                   <e p="PlayerCollisionHandler.cs" t="Include" />
                   <e p="PlayerConfig.cs" t="Include" />
                   <e p="PlayerView.cs" t="Include" />
@@ -289,6 +291,34 @@
               </e>
               <e p="- UI" t="Include">
                 <e p="TextShader.shader" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="RapidIcon" t="Include">
+            <e p="Editor" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="AssetGrid.cs" t="Include" />
+                <e p="AssetList.cs" t="Include" />
+                <e p="DraggableSeparator.cs" t="Include" />
+                <e p="Icon.cs" t="Include" />
+                <e p="IconData.cs" t="Include" />
+                <e p="IconEditor.cs" t="Include" />
+                <e p="RapidIconWindow.cs" t="Include" />
+                <e p="Utils.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="IconRenderer.cs" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="ImgShader.shader" t="Include" />
+              <e p="ObjectRender.shader" t="Include" />
+              <e p="PostProcessing" t="Include">
+                <e p="HSV.shader" t="Include" />
+                <e p="Mask.shader" t="Include" />
+                <e p="Overlay.shader" t="Include" />
+                <e p="Transparency.shader" t="Include" />
+                <e p="Underlay.shader" t="Include" />
               </e>
             </e>
           </e>

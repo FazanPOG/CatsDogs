@@ -21,6 +21,7 @@ namespace _Project.UI
         private readonly ButtonTextView _shopButton;
         private readonly ShopPopupView _view;
         private readonly SkinShopConfig _shopConfig;
+        private readonly SkinConfig[] _skinConfigs;
         private readonly SelectSkinButtonView _selectSkinButtonViewPrefab;
         private readonly IGameplayDataProvider _gameplayDataProvider;
         private readonly IGameStateProvider _gameStateProvider;
@@ -35,6 +36,7 @@ namespace _Project.UI
             ButtonTextView shopButton, 
             ShopPopupView view, 
             SkinShopConfig shopConfig,
+            SkinConfig[] skinConfigs,
             SelectSkinButtonView selectSkinButtonViewPrefab,
             IGameplayDataProvider gameplayDataProvider,
             IGameStateProvider gameStateProvider,
@@ -45,6 +47,7 @@ namespace _Project.UI
             _shopButton = shopButton;
             _view = view;
             _shopConfig = shopConfig;
+            _skinConfigs = skinConfigs;
             _selectSkinButtonViewPrefab = selectSkinButtonViewPrefab;
             _gameplayDataProvider = gameplayDataProvider;
             _gameStateProvider = gameStateProvider;
@@ -60,7 +63,7 @@ namespace _Project.UI
             _view.SetUnlockPriceText(_shopConfig.UnlockSkinPrice.ToString());
             _view.SetADRewardText(_shopConfig.ADRewardAmount.ToString());
             
-            foreach (var skinConfig in _shopConfig.SkinConfigs)
+            foreach (var skinConfig in _skinConfigs)
             {
                 var skinButtonView = Object.Instantiate(_selectSkinButtonViewPrefab, _view.SkinButtonParentTransform);
                 var presenter = new SelectSkinButtonViewPresenter(skinButtonView, skinConfig, _gameplayDataProvider, _skinService, _canSelectSkin);

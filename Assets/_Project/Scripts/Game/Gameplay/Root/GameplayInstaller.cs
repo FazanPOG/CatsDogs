@@ -17,6 +17,7 @@ namespace _Project.Gameplay
         public override void InstallBindings()
         {
             BindData();
+            BindConfigs();
             BindFactories();
             BindServices();
             BindLevel();
@@ -37,6 +38,11 @@ namespace _Project.Gameplay
                 .FromInstance(gameplayDataProvider)
                 .AsSingle()
                 .NonLazy();
+        }
+
+        private void BindConfigs()
+        {
+            Container.Bind<GameplayConfig>().FromInstance(_gameplayConfig).AsSingle().NonLazy();
         }
 
         private void BindFactories()
@@ -75,9 +81,9 @@ namespace _Project.Gameplay
 
         private void BindPlayer()
         {
-            var level = Container.Resolve<Level>();
+            var skinService = Container.Resolve<ISkinService>();
             
-            _player.Init();
+            _player.Init(_gameplayConfig.SkinConfigs, skinService);
             _cameraSystem.Follow(_player.transform);
 
             Container.Bind<Player>().FromInstance(_player).AsSingle().NonLazy();

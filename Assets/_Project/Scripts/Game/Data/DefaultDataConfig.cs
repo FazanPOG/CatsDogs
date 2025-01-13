@@ -1,5 +1,5 @@
 ﻿using System;
-using _Project.UI;
+using _Project.Gameplay;
 using ModestTree;
 using Sirenix.OdinInspector;
 using UnityEngine;
