@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using R3;
+using UnityEngine;
 
 namespace _Project.Gameplay
 {
@@ -10,18 +11,30 @@ namespace _Project.Gameplay
 
         private InputHandler _inputHandler;
         private Movement _movement;
+        private PlayerAnimalMorph _animalMorph;
         private bool _isInit;
+        
+        public ReadOnlyReactiveProperty<float> MorphValue => _animalMorph.MorphValue;
         
         public void Init(SkinConfig[] skinConfigs, ISkinService skinService)
         {
             _inputHandler = new InputHandler();
             _movement = new Movement(_inputHandler, _playerConfig, transform);
-            var animalMorph = new PlayerAnimalMorph(_playerConfig.InitialMorphValue);
-            _playerView.Init(_playerConfig.AnimalViewPrefabs, animalMorph, skinConfigs, skinService, _movement.OnMove);
+            _animalMorph = new PlayerAnimalMorph(_playerConfig.InitialMorphValue);
+            _playerView.Init(_playerConfig.AnimalViewPrefabs, _animalMorph, skinConfigs, skinService, _movement.OnMove);
             
             _isInit = true;
             
+            _collisionHandler.OnItemPicked += OnItemPicked;
             _collisionHandler.OnFinished += OnFinished;
+        }
+
+        private void OnItemPicked(float morphValueChanged)
+        {
+            if(morphValueChanged < 0)
+                _animalMorph.MoveValueLeft(Mathf.Abs(morphValueChanged));
+            else
+                _animalMorph.MoveValueRight(Mathf.Abs(morphValueChanged));
         }
 
         private void OnFinished()
@@ -44,6 +57,7 @@ namespace _Project.Gameplay
 
         private void OnDisable()
         {
+            _collisionHandler.OnItemPicked -= OnItemPicked;
             _collisionHandler.OnFinished -= OnFinished;
         }
     }

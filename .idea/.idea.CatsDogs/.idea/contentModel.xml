@@ -83,6 +83,10 @@
                     <e p="FinishChunk.cs" t="Include" />
                   </e>
                   <e p="Level.cs" t="Include" />
+                  <e p="LevelItems" t="Include">
+                    <e p="LevelItem.cs" t="Include" />
+                    <e p="LevelPickableItem.cs" t="Include" />
+                  </e>
                   <e p="LevelReward" t="Include">
                     <e p="LevelReward.cs" t="Include" />
                   </e>
@@ -129,6 +133,7 @@
                   <e p="FortuneWheelPopupViewPresenter.cs" t="Include" />
                   <e p="FortuneWheelRewardViewPresenter.cs" t="Include" />
                   <e p="LevelProgressViewPresenter.cs" t="Include" />
+                  <e p="PlayerMorphValueViewPresenter.cs" t="Include" />
                   <e p="SelectSkinButtonViewPresenter.cs" t="Include" />
                   <e p="ShopPopupViewPresenter.cs" t="Include" />
                   <e p="TapToStartViewPresenter.cs" t="Include" />
@@ -144,6 +149,7 @@
                   <e p="FortuneWheelPopupView.cs" t="Include" />
                   <e p="FortuneWheelRewardView.cs" t="Include" />
                   <e p="LevelProgressView.cs" t="Include" />
+                  <e p="PlayerMorphValueView.cs" t="Include" />
                   <e p="SelectSkinButtonView.cs" t="Include" />
                   <e p="ShopPopupView.cs" t="Include" />
                 </e>

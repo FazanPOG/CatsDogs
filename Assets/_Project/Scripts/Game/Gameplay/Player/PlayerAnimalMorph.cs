@@ -21,10 +21,10 @@ namespace _Project.Gameplay
             
             _animalValueMap = new Dictionary<Animal, float>()
             {
-                [Animal.SmallCat] = 0.4f,
-                [Animal.BigCat] = 0.2f,
-                [Animal.SmallDog] = 0.6f,
-                [Animal.BigDog] = 0.8f,
+                [Animal.SmallCat] = 0.5f,
+                [Animal.BigCat] = 0.1f,
+                [Animal.SmallDog] = 0.7f,
+                [Animal.BigDog] = 0.9f,
             };
             
             CheckCurrentAnimal();
@@ -47,8 +47,6 @@ namespace _Project.Gameplay
 
             Mathf.Clamp01(_currentMorphValue.Value -= value);
             
-            Debug.Log($"Morph value: {_currentMorphValue}");
-
             CheckCurrentAnimal();
         }
 

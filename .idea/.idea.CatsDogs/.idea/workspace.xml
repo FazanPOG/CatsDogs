@@ -21,64 +21,17 @@
   <component name="ChangeListManager">
     <list default="true" id="22894349-ff88-4f81-b131-965ff38d5911" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CatsDogs/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CatsDogs/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CatsDogs/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CatsDogs/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CatsDogs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CatsDogs/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/LowpolyHats/Materials/Flat/mat_BachelorHat01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/LowpolyHats/Materials/Flat/mat_BachelorHat01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/LowpolyHats/Materials/Flat/mat_BaseballHat01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/LowpolyHats/Materials/Flat/mat_BaseballHat01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/LowpolyHats/Materials/Flat/mat_BeerHat01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/LowpolyHats/Materials/Flat/mat_BeerHat01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/LowpolyHats/Materials/Flat/mat_BigHornedHelmet01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/LowpolyHats/Materials/Flat/mat_BigHornedHelmet01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/LowpolyHats/Materials/Flat/mat_CandleHat01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/LowpolyHats/Materials/Flat/mat_CandleHat01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/LowpolyHats/Materials/Flat/mat_ChefHat01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/LowpolyHats/Materials/Flat/mat_ChefHat01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/LowpolyHats/Materials/Flat/mat_Coin01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/LowpolyHats/Materials/Flat/mat_Coin01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/LowpolyHats/Materials/Flat/mat_CowboyHat01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/LowpolyHats/Materials/Flat/mat_CowboyHat01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/LowpolyHats/Materials/Flat/mat_CrownHat01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/LowpolyHats/Materials/Flat/mat_CrownHat01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/LowpolyHats/Materials/Flat/mat_CrownHat02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/LowpolyHats/Materials/Flat/mat_CrownHat02.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/polyperfect/Low Poly Animated Animals/- Animator Controllers/Cat.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/polyperfect/Low Poly Animated Animals/- Animator Controllers/Cat.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/polyperfect/Low Poly Animated Animals/- Animator Controllers/Dog-GreatDane.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/polyperfect/Low Poly Animated Animals/- Animator Controllers/Dog-GreatDane.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/polyperfect/Low Poly Animated Animals/- Animator Controllers/Tiger.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/polyperfect/Low Poly Animated Animals/- Animator Controllers/Tiger.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Configs/Gameplay/GameplayConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Configs/Gameplay/GameplayConfig.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Configs/Gameplay/PlayerConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Configs/Gameplay/PlayerConfig.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Configs/UI/Shop/Skins.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Configs/UI/Shop/Skins/Skin 1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Configs/UI/Shop/Skins/Skin 1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Configs/UI/Shop/Skins/Skin 2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Configs/UI/Shop/Skins/Skin 2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Configs/UI/Shop/Skins/Skin 3.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Configs/UI/Shop/Skins/Skin 3.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Configs/UI/Shop/Skins/Skin 4.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Configs/UI/Shop/Skins/Skin 4.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Configs/UI/Shop/Skins/Skin 5.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Configs/UI/Shop/Skins/Skin 5.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Configs/UI/Shop/Skins/Skin 6.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Configs/UI/Shop/Skins/Skin 6.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Configs/UI/Shop/Skins/Skin 7.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Configs/UI/Shop/Skins/Skin 7.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Configs/UI/Shop/Skins/Skin 8.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Configs/UI/Shop/Skins/Skin 8.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Configs/UI/Shop/Skins/Skin 9.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Configs/UI/Shop/Skins/Skin 9.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Player/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Player/Views/CatBigView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Player/Views/CatBigView.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Player/Views/CatSmallView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Player/Views/CatSmallView.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Player/Views/DogBigView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Player/Views/DogBigView.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Player/Views/DogSmallView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Player/Views/DogSmallView.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/SelectSkinButtonView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/SelectSkinButtonView.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Chunks/Door Chunk.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Chunks/Door Chunk.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Chunks/Finish Cnunk.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Chunks/Finish Cnunk.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Gameplay.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Data/DefaultDataConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Data/DefaultDataConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/AnimalView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/AnimalView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/Movement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Root/GameplayConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Root/GameplayConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Root/GameplayInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Root/GameplayInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Configs/SkinConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Configs/SkinConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Configs/SkinShopConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Configs/SkinShopConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Presenters/ShopPopupViewPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Presenters/ShopPopupViewPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerAnimalMorph.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerAnimalMorph.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerCollisionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerCollisionHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Presenters/LevelProgressViewPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Presenters/LevelProgressViewPresenter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Root/UIInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Root/UIInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Views/LevelProgressView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Views/LevelProgressView.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,28 +44,34 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.r3@9b18209448/Runtime/UnityProviderInitializer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/RapidIcon/Editor/Scripts/IconEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Image.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerCollisionHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Presenters/LevelProgressViewPresenter.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/SkinService.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Services/ISkinService.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/Animal.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Root/GameplayConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Configs/SkinShopConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Presenters/ShopPopupViewPresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Root/UIInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Root/GameplayInstaller.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerAnimalMorph.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Configs/SkinConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Data/DefaultDataConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/Movement.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/AnimalView.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerView.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Views/LevelProgressView.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Presenters/LevelProgressViewPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Views/PlayerMorphValueView.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Presenters/PlayerMorphValueViewPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/UI/Root/UIInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Level/LevelItems/LevelItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Level/LevelItems/LevelPickableItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerCollisionHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Project/Scripts/Game/Gameplay/Player/PlayerAnimalMorph.cs" />
       </list>
     </option>
   </component>
@@ -161,6 +120,8 @@
       <workItem from="1736679761503" duration="4069000" />
       <workItem from="1736695978966" duration="1950000" />
       <workItem from="1736762142420" duration="7614000" />
+      <workItem from="1736776151592" duration="1977000" />
+      <workItem from="1736852544992" duration="3117000" />
     </task>
     <servers />
   </component>

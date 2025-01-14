@@ -25,6 +25,7 @@ namespace _Project.Game
         [SerializeField] private ButtonTextView _tapToStartView;
         [SerializeField] private LevelProgressView _levelProgressView;
         [SerializeField] private ButtonTextView _shopButton;
+        [SerializeField] private PlayerMorphValueView _morphValueView;
         [Header("Popups")]
         [SerializeField] private ShopPopupView _shopPopupView;
         [SerializeField] private FortuneWheelPopupView _fortuneWheelPopupView;
@@ -52,7 +53,8 @@ namespace _Project.Game
                 _levelProgressView, 
                 gameplayDataProvider.GameplayDataProxy.LevelNumber, 
                 level.FinishChunk,
-                player.transform);
+                player.transform,
+                gameStateProvider);
 
             Container.Bind<ITickable>().To<LevelProgressViewPresenter>().FromInstance(levelProgressViewPresenter).AsCached().NonLazy();
             
@@ -87,6 +89,8 @@ namespace _Project.Game
                 gameStateProvider,
                 levelRewardService,
                 adService);
+
+            new PlayerMorphValueViewPresenter(_morphValueView, player.MorphValue);
         }
 
         private void OnValidate()

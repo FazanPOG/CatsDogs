@@ -18,24 +18,40 @@ namespace _Project.UI
             LevelProgressView levelProgressView, 
             ReadOnlyReactiveProperty<int> levelNumber,
             FinishChunk finishChunk,
-            Transform playerTransform)
+            Transform playerTransform,
+            IGameStateProvider gameStateProvider)
         {
             _levelProgressView = levelProgressView;
             _finishChunk = finishChunk;
             _playerTransform = playerTransform;
 
-            _levelDistance = Vector3.Distance(_playerTransform.position, _finishChunk.FinishPoint.position);
+            _levelProgressView.SetProgressBarActiveState(_levelProgressView.ShowBar);
+            
+            if (_levelProgressView.ShowBar)
+            {
+                _levelDistance = Vector3.Distance(_playerTransform.position, _finishChunk.FinishPoint.position);
+                UpdateProgressBar(0f);
+            }
 
-            UpdateProgressBar(0f);
             UpdateText(levelNumber.CurrentValue);
+
+            gameStateProvider.GameState.Subscribe(HandleGameState);
         }
 
         public void Tick()
         {
-            if(_isFinished == false)
+            if(_isFinished == false && _levelProgressView.ShowBar)
                 UpdateLevelDistance();
         }
 
+        private void HandleGameState(IGameState gameState)
+        {
+            if (gameState is BootState)
+                _levelProgressView.Show();
+            else
+                _levelProgressView.Hide();
+        }
+        
         private void UpdateLevelDistance()
         {
             float currentDistance = Vector3.Distance(_playerTransform.position, _finishChunk.FinishPoint.position);

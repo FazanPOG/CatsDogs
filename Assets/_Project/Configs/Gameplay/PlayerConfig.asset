@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _forwardMoveSpeed: 8
   _slideMoveSpeed: 15
-  _initialMorphValue: 0.4
+  _initialMorphValue: 1
   _animalViewPrefabs:
   - {fileID: 7722292950817834264, guid: 8906583ceb28c4d45894ab01e6771977, type: 3}
   - {fileID: 8840762011961454166, guid: 90df6e8ac6ddbd84c9b792a6b4498cdc, type: 3}
