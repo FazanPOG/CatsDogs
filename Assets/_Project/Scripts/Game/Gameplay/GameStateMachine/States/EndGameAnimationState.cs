@@ -22,7 +22,7 @@ namespace _Project.Gameplay
 
         private IEnumerator EndGameAnimation()
         {
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(8.5f);
             _gameStateMachine.EnterIn<WinState>();
         }
         

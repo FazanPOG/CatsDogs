@@ -20,13 +20,19 @@ namespace _Project.Gameplay
         {
             _inputHandler = new InputHandler();
             _movement = new Movement(_inputHandler, _playerConfig, transform);
-            _animalMorph = new PlayerAnimalMorph(_playerConfig.InitialMorphValue);
+            _animalMorph = new PlayerAnimalMorph(Random.Range(0f, 1f));
             _playerView.Init(_playerConfig.AnimalViewPrefabs, _animalMorph, skinConfigs, skinService, _movement.OnMove);
             
             _isInit = true;
             
             _collisionHandler.OnItemPicked += OnItemPicked;
             _collisionHandler.OnFinished += OnFinished;
+            _collisionHandler.OnLevelEnded += OnLevelEnded;
+        }
+
+        private void OnLevelEnded()
+        {
+            _movement.Disable();
         }
 
         private void OnItemPicked(float morphValueChanged)
@@ -59,6 +65,7 @@ namespace _Project.Gameplay
         {
             _collisionHandler.OnItemPicked -= OnItemPicked;
             _collisionHandler.OnFinished -= OnFinished;
+            _collisionHandler.OnLevelEnded -= OnLevelEnded;
         }
     }
 }

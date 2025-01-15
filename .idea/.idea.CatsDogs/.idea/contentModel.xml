@@ -82,6 +82,7 @@
                     <e p="BaseChunk.cs" t="Include" />
                     <e p="FinishChunk.cs" t="Include" />
                   </e>
+                  <e p="EndLevelTrigger.cs" t="Include" />
                   <e p="Level.cs" t="Include" />
                   <e p="LevelItems" t="Include">
                     <e p="LevelItem.cs" t="Include" />
@@ -113,6 +114,7 @@
                 </e>
               </e>
               <e p="Root" t="Include">
+                <e p="Boot.cs" t="Include" />
                 <e p="ProjectInstaller.cs" t="Include" />
               </e>
               <e p="Services" t="Include">
@@ -351,6 +353,23 @@
                 </e>
               </e>
               <e p="Modules" t="Include">
+                <e p="Unity.Addressables" t="Include">
+                  <e p="AddressablesInspectors.cs" t="Include" />
+                  <e p="Internal" t="Include">
+                    <e p="OdinAddressableReflection.cs" t="Include" />
+                    <e p="OdinAddressableReflectionValidator.cs" t="Include" />
+                  </e>
+                  <e p="manifest.txt" t="Include" />
+                  <e p="Sirenix.OdinInspector.Modules.Unity.Addressables.asmdef" t="Include" />
+                  <e p="Validators" t="Include">
+                    <e p="AssetLabelReferenceValidator.cs" t="Include" />
+                    <e p="AssetReferenceValidator.cs" t="Include" />
+                    <e p="CheckDuplicateBundleDependenciesValidator.cs" t="Include" />
+                    <e p="CheckResourcesToAddressableDuplicateDependenciesValidator.cs" t="Include" />
+                    <e p="DisallowAddressableSubAssetFieldAttributeValidator.cs" t="Include" />
+                    <e p="MissingAddressableGroupReferenceValidator.cs" t="Include" />
+                  </e>
+                </e>
                 <e p="Unity.Mathematics" t="Include">
                   <e p="manifest.txt" t="Include" />
                   <e p="MathematicsDrawers.cs" t="Include" />
@@ -1395,6 +1414,7 @@
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Polyperfect.Animals.csproj" t="IncludeRecursive" />
       <e p="Polyperfect.Common.csproj" t="IncludeRecursive" />
+      <e p="Sirenix.OdinInspector.Modules.Unity.Addressables.csproj" t="IncludeRecursive" />
       <e p="Sirenix.OdinInspector.Modules.UnityMathematics.csproj" t="IncludeRecursive" />
       <e p="Temp\Bin" t="ExcludeRecursive" />
       <e p="VFolders.csproj" t="IncludeRecursive" />

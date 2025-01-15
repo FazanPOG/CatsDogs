@@ -1,4 +1,5 @@
 ﻿using R3;
+using UnityEngine;
 
 namespace _Project.UI
 {
@@ -16,6 +17,7 @@ namespace _Project.UI
         private void UpdateView(float morphValue)
         {
             var newXPos = MapValue(morphValue, _view.MinPinXValuePosition, _view.MaxPinXValuePosition);
+            
             _view.SetPinXPosition(newXPos);
         }
         

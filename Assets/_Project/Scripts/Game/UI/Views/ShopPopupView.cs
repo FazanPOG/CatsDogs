@@ -11,6 +11,7 @@ namespace _Project.UI
         [SerializeField] private Button _buyButton;
         [SerializeField] private Button _adButton;
         [SerializeField] private TextMeshProUGUI _unlockPriceText;
+        [SerializeField] private TextMeshProUGUI _unlockText;
         [SerializeField] private TextMeshProUGUI _adRewardText;
         [SerializeField] private Image[] _currencyImages;
         [SerializeField] private RectTransform _skinButtonParentTransform;
@@ -36,6 +37,7 @@ namespace _Project.UI
         public void Show() => gameObject.SetActive(true);
         public void Hide() => gameObject.SetActive(false);
 
+        public void SetUnlockText(string text) => _unlockText.text = text;
         public void SetUnlockPriceText(string text) => _unlockPriceText.text = text;
         public void SetADRewardText(string text) => _adRewardText.text = text; 
         

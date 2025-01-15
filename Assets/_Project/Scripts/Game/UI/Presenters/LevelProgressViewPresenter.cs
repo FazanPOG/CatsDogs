@@ -1,4 +1,5 @@
-﻿using _Project.Gameplay;
+﻿using _Project.API;
+using _Project.Gameplay;
 using R3;
 using UnityEngine;
 using Zenject;
@@ -10,6 +11,7 @@ namespace _Project.UI
         private readonly LevelProgressView _levelProgressView;
         private readonly FinishChunk _finishChunk;
         private readonly Transform _playerTransform;
+        private readonly ILocalizationProvider _localizationProvider;
         private readonly float _levelDistance;
         
         private bool _isFinished;
@@ -19,11 +21,13 @@ namespace _Project.UI
             ReadOnlyReactiveProperty<int> levelNumber,
             FinishChunk finishChunk,
             Transform playerTransform,
-            IGameStateProvider gameStateProvider)
+            IGameStateProvider gameStateProvider,
+            ILocalizationProvider localizationProvider)
         {
             _levelProgressView = levelProgressView;
             _finishChunk = finishChunk;
             _playerTransform = playerTransform;
+            _localizationProvider = localizationProvider;
 
             _levelProgressView.SetProgressBarActiveState(_levelProgressView.ShowBar);
             
@@ -72,8 +76,8 @@ namespace _Project.UI
 
         private void UpdateText(int levelNumber)
         {
-            //TODO: localize
-            _levelProgressView.SetCurrentLevelText($"Level {levelNumber}");
+            string text = $"{_localizationProvider.LocalizationAsset.GetTranslation(LocalizationKeys.LEVEL_KEY)} {levelNumber}";
+            _levelProgressView.SetCurrentLevelText(text);
         }
     }
 }

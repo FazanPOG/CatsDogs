@@ -42,6 +42,7 @@ namespace _Project.Game
             var player = Container.Resolve<Player>();
             var level = Container.Resolve<Level>();
             var levelRewardService = Container.Resolve<ILevelRewardService>();
+            var localizationProvider = Container.Resolve<ILocalizationProvider>();
             var gameplayConfig = Container.Resolve<GameplayConfig>();
 
             foreach (var currencyView in _currencyViews)
@@ -54,7 +55,8 @@ namespace _Project.Game
                 gameplayDataProvider.GameplayDataProxy.LevelNumber, 
                 level.FinishChunk,
                 player.transform,
-                gameStateProvider);
+                gameStateProvider,
+                localizationProvider);
 
             Container.Bind<ITickable>().To<LevelProgressViewPresenter>().FromInstance(levelProgressViewPresenter).AsCached().NonLazy();
             
@@ -68,7 +70,8 @@ namespace _Project.Game
                 gameStateProvider,
                 adService, 
                 skinService,
-                context);
+                context,
+                localizationProvider);
             
             new FortuneWheelPopupViewPresenter(
                 _fortuneWheelPopupView,

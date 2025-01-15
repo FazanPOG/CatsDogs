@@ -8,6 +8,7 @@ namespace _Project.Gameplay
     {
         public event Action<float> OnItemPicked;
         public event Action OnFinished;
+        public event Action OnLevelEnded;
         
         private void OnTriggerEnter(Collider other)
         {
@@ -21,6 +22,9 @@ namespace _Project.Gameplay
 
             if(other.TryGetComponent(out FinishChunk finishChunk))
                 OnFinished?.Invoke();
+            
+            if(other.TryGetComponent(out EndLevelTrigger endLevelTrigger))
+                OnLevelEnded?.Invoke();
         }
     }
 }

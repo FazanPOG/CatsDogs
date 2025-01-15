@@ -28,6 +28,7 @@ namespace _Project.UI
         private readonly IADService _adService;
         private readonly ISkinService _skinService;
         private readonly MonoBehaviourContext _monoBehaviourContext;
+        private readonly ILocalizationProvider _localizationProvider;
 
         private readonly ReactiveProperty<bool> _canSelectSkin = new ReactiveProperty<bool>();
         private readonly Dictionary<string, SelectSkinButtonViewPresenter> _idSkinButtonPresenterMap = new Dictionary<string, SelectSkinButtonViewPresenter>();
@@ -42,7 +43,8 @@ namespace _Project.UI
             IGameStateProvider gameStateProvider,
             IADService adService,
             ISkinService skinService,
-            MonoBehaviourContext monoBehaviourContext)
+            MonoBehaviourContext monoBehaviourContext,
+            ILocalizationProvider localizationProvider)
         {
             _shopButton = shopButton;
             _view = view;
@@ -54,6 +56,7 @@ namespace _Project.UI
             _adService = adService;
             _skinService = skinService;
             _monoBehaviourContext = monoBehaviourContext;
+            _localizationProvider = localizationProvider;
 
             Init();
         }
@@ -62,6 +65,8 @@ namespace _Project.UI
         {
             _view.SetUnlockPriceText(_shopConfig.UnlockSkinPrice.ToString());
             _view.SetADRewardText(_shopConfig.ADRewardAmount.ToString());
+            _shopButton.SetText(_localizationProvider.LocalizationAsset.GetTranslation(LocalizationKeys.HATS_KEY));
+            _view.SetUnlockText(_localizationProvider.LocalizationAsset.GetTranslation(LocalizationKeys.UNLOCK_KEY));
             
             foreach (var skinConfig in _skinConfigs)
             {

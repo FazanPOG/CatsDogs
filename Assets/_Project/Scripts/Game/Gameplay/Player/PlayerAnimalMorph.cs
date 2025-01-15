@@ -35,7 +35,9 @@ namespace _Project.Gameplay
             if(value < 0)
                 throw new Exception();
 
-            Mathf.Clamp01(_currentMorphValue.Value += value);
+            var newValue = _currentMorphValue.CurrentValue + value;
+            var clampedValue = Mathf.Clamp01(newValue);
+            _currentMorphValue.Value = clampedValue;
             
             CheckCurrentAnimal();
         }
@@ -45,7 +47,9 @@ namespace _Project.Gameplay
             if(value < 0)
                 throw new Exception();
 
-            Mathf.Clamp01(_currentMorphValue.Value -= value);
+            var newValue = _currentMorphValue.CurrentValue - value;
+            var clampedValue = Mathf.Clamp01(newValue);
+            _currentMorphValue.Value = clampedValue;
             
             CheckCurrentAnimal();
         }

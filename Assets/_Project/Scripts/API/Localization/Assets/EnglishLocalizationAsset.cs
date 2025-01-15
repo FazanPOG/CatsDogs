@@ -11,25 +11,10 @@ namespace _Project.API
         {
             _translations = new Dictionary<string, string>()
             {
-                [LocalizationKeys.GAME_NAME_KEY] = "Zombie Survivors 3D",
-                [LocalizationKeys.SHOP_KEY] = "Shop",
-                [LocalizationKeys.PLAY_KEY] = "Play",
-                [LocalizationKeys.SETTINGS_KEY] = "Settings",
-                [LocalizationKeys.MUSIC_KEY] = "Music",
-                [LocalizationKeys.SOUND_KEY] = "Sound",
-                [LocalizationKeys.BULLET_KEY] = "Bullet",
-                [LocalizationKeys.UPGRADE_KEY] = "Upgrade",
-                [LocalizationKeys.HP_KEY] = "Health",
-                [LocalizationKeys.MOVE_SPEED_KEY] = "Move speed",
-                [LocalizationKeys.LEVEL_SHORT_KEY] = "LV",
-                [LocalizationKeys.TAP_TO_START_KEY] = "Tap to start",
-                [LocalizationKeys.SCORE_KEY] = "Score",
-                [LocalizationKeys.PAUSE_KEY] = "Pause",
-                [LocalizationKeys.CONTINUE_KEY] = "Continue",
-                [LocalizationKeys.GIVE_UP_KEY] = "Give up",
-                [LocalizationKeys.MAX_KEY] = "Max",
-                [LocalizationKeys.SOLD_OUT_KEY] = "Sold out",
-                [LocalizationKeys.LOSE_TITLE_KEY] = "YOU'VE BEEN INFECTED",
+                [LocalizationKeys.PRESS_TO_START_KEY] = "Press to start",
+                [LocalizationKeys.LEVEL_KEY] = "Level",
+                [LocalizationKeys.HATS_KEY] = "Hats",
+                [LocalizationKeys.UNLOCK_KEY] = "Unlock",
             };
         }
         

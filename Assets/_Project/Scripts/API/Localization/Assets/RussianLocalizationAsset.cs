@@ -11,25 +11,10 @@ namespace _Project.API
         {
             _translations = new Dictionary<string, string>()
             {
-                [LocalizationKeys.GAME_NAME_KEY] = "ЗОМБИ ВЫЖИВАНИЕ 3д",
-                [LocalizationKeys.SHOP_KEY] = "Магазин",
-                [LocalizationKeys.PLAY_KEY] = "Играть",
-                [LocalizationKeys.SETTINGS_KEY] = "Настройки",
-                [LocalizationKeys.MUSIC_KEY] = "Музыка",
-                [LocalizationKeys.SOUND_KEY] = "Звуки",
-                [LocalizationKeys.BULLET_KEY] = "Патроны",
-                [LocalizationKeys.UPGRADE_KEY] = "Улучшения",
-                [LocalizationKeys.HP_KEY] = "Здоровье",
-                [LocalizationKeys.MOVE_SPEED_KEY] = "Скорость",
-                [LocalizationKeys.LEVEL_SHORT_KEY] = "УР",
-                [LocalizationKeys.TAP_TO_START_KEY] = "Нажмите для начала",
-                [LocalizationKeys.SCORE_KEY] = "Счет",
-                [LocalizationKeys.PAUSE_KEY] = "Пауза",
-                [LocalizationKeys.CONTINUE_KEY] = "Продолжить",
-                [LocalizationKeys.GIVE_UP_KEY] = "Сдаться",
-                [LocalizationKeys.MAX_KEY] = "МАКС",
-                [LocalizationKeys.SOLD_OUT_KEY] = "Распродано",
-                [LocalizationKeys.LOSE_TITLE_KEY] = "Вы были заражены!",
+                [LocalizationKeys.PRESS_TO_START_KEY] = "Нажмите для начала",
+                [LocalizationKeys.LEVEL_KEY] = "Уровень",
+                [LocalizationKeys.HATS_KEY] = "Шляпы",
+                [LocalizationKeys.UNLOCK_KEY] = "Открыть",
             };
         }
         

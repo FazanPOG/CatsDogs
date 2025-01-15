@@ -10,7 +10,9 @@ namespace _Project.Gameplay
         private AnimalView[] _animalViews;
         private SkinConfig[] _skins;
         private GameObject _currentSkinView;
+        private string _currentSkinID;
         private AnimalView _currentAnimalView;
+        private ReadOnlyReactiveProperty<bool> _onMove;
         
         public void Init(
             AnimalView[] animalViews,
@@ -21,10 +23,11 @@ namespace _Project.Gameplay
         {
             _animalViews = animalViews;
             _skins = skins;
+            _onMove = onMove;
 
             animalMorph.CurrentAnimal.Subscribe(ChangeAnimal);
             skinService.CurrentSkinID.Subscribe(HandleSkinChanged);
-            onMove.Subscribe(HandleOnMove);
+            _onMove.Subscribe(HandleOnMove);
         }
 
         private void ChangeAnimal(Animal animal)
@@ -39,10 +42,15 @@ namespace _Project.Gameplay
             
             _currentAnimalView = Instantiate(animalView, transform);
             _currentAnimalView.Init();
+            HandleOnMove(_onMove.CurrentValue);
+            HandleSkinChanged(_currentSkinID);
         }
 
         private void HandleSkinChanged(string skinID)
         {
+            if(string.IsNullOrEmpty(skinID))
+                return;
+            
             if(_currentSkinView != null)
                 Destroy(_currentSkinView.gameObject);
 
@@ -57,6 +65,7 @@ namespace _Project.Gameplay
             instance.transform.localRotation = Quaternion.identity;
 
             _currentSkinView = instance;
+            _currentSkinID = skinID;
         }
 
         private void HandleOnMove(bool onMove)

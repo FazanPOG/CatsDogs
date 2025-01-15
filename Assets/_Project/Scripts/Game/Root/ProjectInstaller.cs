@@ -13,8 +13,8 @@ namespace _Project.Root
             BindUtils();
             BindAPI();
             BindServices();
-            
-            Container.Resolve<ISceneLoaderService>().LoadGameplayScene();
+
+            StartGame();
         }
 
         private void BindUtils()
@@ -30,10 +30,20 @@ namespace _Project.Root
             APIBinder apiBinder = new APIBinder(Container);
             apiBinder.Bind();
         }
-        
+
         private void BindServices()
         {
             Container.Bind<ISceneLoaderService>().To<SceneLoaderService>().FromNew().AsSingle().NonLazy();
+        }
+
+        private void StartGame()
+        {
+            var monoBehaviourContext = Container.Resolve<MonoBehaviourContext>();
+            var sceneLoader = Container.Resolve<ISceneLoaderService>();
+            var apiEnvironment = Container.Resolve<IAPIEnvironmentService>();
+            var localizationProvider = Container.Resolve<ILocalizationProvider>();
+            
+            new Boot(monoBehaviourContext, sceneLoader, apiEnvironment, localizationProvider);
         }
     }
 }

@@ -30,12 +30,18 @@ namespace _Project.Gameplay
             _canMove.Value = true;
             _canSlide = true;
         }
-        
+
+        public void Disable()
+        {
+            _canMove.Value = false;
+            _canSlide = false;
+        }
+
         public void DisableSlide()
         {
             _canSlide = false;
         }
-        
+
         public void Update()
         {
             if (_inputHandler.IsPressing && _canSlide)
