@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a35ca56fb6340f1b34602304156ebb4, type: 3}
+  m_Name: AudioReferences
+  m_EditorClassIdentifier: 
+  _backgroundMusic: {fileID: 8300000, guid: 320d9149adf11c54499e4db9b5e983db, type: 3}
+  _clickClip: {fileID: 8300000, guid: 1f23aa938c297e1468ad211f56ed1e44, type: 3}
+  _plopClip: {fileID: 8300000, guid: 8d8899381d8220547896aacbf6c1a6c0, type: 3}
+  _fireworksClip: {fileID: 8300000, guid: af0f6d9f4eb962e4f860b9f69bdbe0ce, type: 3}
+  _catClip: {fileID: 8300000, guid: 2dfb0872f7e387a48b8938bba3295b62, type: 3}
+  _dogClip: {fileID: 8300000, guid: a13e1160b3d623f4aa6194eba209173f, type: 3}

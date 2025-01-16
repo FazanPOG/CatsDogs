@@ -1,4 +1,5 @@
-﻿using _Project.Gameplay;
+﻿using _Project.Audio;
+using _Project.Gameplay;
 
 namespace _Project.UI
 {
@@ -6,12 +7,14 @@ namespace _Project.UI
     {
         private readonly ButtonTextView _tapToStartView;
         private readonly IGameStateMachine _gameStateMachine;
+        private readonly AudioPlayer _audioPlayer;
 
-        public TapToStartViewPresenter(ButtonTextView tapToStartView, IGameStateMachine gameStateMachine)
+        public TapToStartViewPresenter(ButtonTextView tapToStartView, IGameStateMachine gameStateMachine, AudioPlayer audioPlayer)
         {
             _tapToStartView = tapToStartView;
             _gameStateMachine = gameStateMachine;
-         
+            _audioPlayer = audioPlayer;
+
             _tapToStartView.Show();
             _tapToStartView.OnButtonClicked += OnButtonClicked;
         }
@@ -20,6 +23,7 @@ namespace _Project.UI
         {
             _gameStateMachine.EnterIn<GameplayState>();
             _tapToStartView.Hide();
+            _audioPlayer.PlayClickAudio();
         }
     }
 }

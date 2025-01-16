@@ -1,4 +1,5 @@
 ﻿using System;
+using _Project.Audio;
 using UnityEngine;
 
 namespace _Project.Gameplay
@@ -10,6 +11,11 @@ namespace _Project.Gameplay
 
         public FinishChunk FinishChunk => _finishChunk;
 
+        public void Init(AudioPlayer audioPlayer)
+        {
+            _finishChunk.Init(audioPlayer);
+        }
+        
         private void OnValidate()
         {
             foreach (var chunk in _chunks)

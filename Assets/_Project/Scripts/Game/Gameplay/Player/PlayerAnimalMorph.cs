@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Project.Audio;
 using R3;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace _Project.Gameplay
 {
     public class PlayerAnimalMorph
     {
+        private readonly AudioPlayer _audioPlayer;
         private readonly ReactiveProperty<float> _currentMorphValue = new ReactiveProperty<float>();
         private readonly ReactiveProperty<Animal> _currentAnimal = new ReactiveProperty<Animal>();
         private readonly Dictionary<Animal, float> _animalValueMap;
@@ -15,8 +17,9 @@ namespace _Project.Gameplay
         public ReadOnlyReactiveProperty<float> MorphValue => _currentMorphValue;
         public ReadOnlyReactiveProperty<Animal> CurrentAnimal => _currentAnimal;
         
-        public PlayerAnimalMorph(float initialValue)
+        public PlayerAnimalMorph(float initialValue, AudioPlayer audioPlayer)
         {
+            _audioPlayer = audioPlayer;
             _currentMorphValue.Value = initialValue;
             
             _animalValueMap = new Dictionary<Animal, float>()
@@ -57,9 +60,27 @@ namespace _Project.Gameplay
         private void CheckCurrentAnimal()
         {
             Animal newAnimal = GetCurrentAnimal();
-            
+
             if (_currentAnimal.Value != newAnimal)
+            {
+                switch (newAnimal)
+                {
+                    case Animal.BigCat:
+                        _audioPlayer.PlayCatAudio();
+                        break;
+                    case Animal.SmallCat:
+                        _audioPlayer.PlayCatAudio();
+                        break;
+                    case Animal.BigDog:
+                        _audioPlayer.PlayDogAudio();
+                        break;
+                    case Animal.SmallDog:
+                        _audioPlayer.PlayDogAudio();
+                        break;
+                }
+                
                 _currentAnimal.Value = newAnimal;
+            }
         }
         
         private Animal GetCurrentAnimal()

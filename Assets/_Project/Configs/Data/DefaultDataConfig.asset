@@ -16,5 +16,3 @@ MonoBehaviour:
   _defaultLevelNumber: 1
   _defaultUnlockedSkins:
   - {fileID: 11400000, guid: e1a319da098bc21449ec46840b0b5019, type: 2}
-  - {fileID: 11400000, guid: 9a974286f011dc74d90201844005aa43, type: 2}
-  - {fileID: 11400000, guid: 9fb6aaaee0eae1341975e27719844ff4, type: 2}

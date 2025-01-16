@@ -44,6 +44,10 @@
               </e>
             </e>
             <e p="Game" t="Include">
+              <e p="Audio" t="Include">
+                <e p="AudioPlayer.cs" t="Include" />
+                <e p="AudioReferencesConfig.cs" t="Include" />
+              </e>
               <e p="Data" t="Include">
                 <e p="DefaultDataConfig.cs" t="Include" />
                 <e p="Gameplay" t="Include">
@@ -138,6 +142,7 @@
                   <e p="PlayerMorphValueViewPresenter.cs" t="Include" />
                   <e p="SelectSkinButtonViewPresenter.cs" t="Include" />
                   <e p="ShopPopupViewPresenter.cs" t="Include" />
+                  <e p="SoundButtonViewPresenter.cs" t="Include" />
                   <e p="TapToStartViewPresenter.cs" t="Include" />
                 </e>
                 <e p="Root" t="Include">
@@ -154,6 +159,7 @@
                   <e p="PlayerMorphValueView.cs" t="Include" />
                   <e p="SelectSkinButtonView.cs" t="Include" />
                   <e p="ShopPopupView.cs" t="Include" />
+                  <e p="SoundButtonView.cs" t="Include" />
                 </e>
               </e>
             </e>

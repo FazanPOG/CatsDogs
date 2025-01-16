@@ -1,4 +1,5 @@
 ﻿using System;
+using _Project.Audio;
 using _Project.Data;
 using _Project.Gameplay;
 using R3;
@@ -11,6 +12,7 @@ namespace _Project.UI
         private readonly SkinConfig _skinConfig;
         private readonly IGameplayDataProvider _gameplayDataProvider;
         private readonly ISkinService _skinService;
+        private readonly AudioPlayer _audioPlayer;
 
         private bool _isUnlocked;
         
@@ -19,12 +21,14 @@ namespace _Project.UI
             SkinConfig skinConfig, 
             IGameplayDataProvider gameplayDataProvider,
             ISkinService skinService,
-            ReadOnlyReactiveProperty<bool> canSelectSkin)
+            ReadOnlyReactiveProperty<bool> canSelectSkin,
+            AudioPlayer audioPlayer)
         {
             _selectSkinButtonView = selectSkinButtonView;
             _skinConfig = skinConfig;
             _gameplayDataProvider = gameplayDataProvider;
             _skinService = skinService;
+            _audioPlayer = audioPlayer;
 
             InitView();
             _selectSkinButtonView.OnButtonClicked += OnButtonClicked;
@@ -69,6 +73,7 @@ namespace _Project.UI
             if(_isUnlocked == false)
                 return;
             
+            _audioPlayer.PlayClickAudio();
             _skinService.SelectSkin(_skinConfig.ID);
         }
 

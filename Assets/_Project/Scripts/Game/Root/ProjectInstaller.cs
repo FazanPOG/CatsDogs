@@ -1,4 +1,5 @@
 ﻿using _Project.API;
+using _Project.Audio;
 using _Project.Game;
 using _Project.Utility;
 using UnityEngine;
@@ -8,15 +9,18 @@ namespace _Project.Root
 {
     public class ProjectInstaller : MonoInstaller
     {
+        [SerializeField] private AudioReferencesConfig _audioReferencesConfig;
+        
         public override void InstallBindings()
         {
             BindUtils();
             BindAPI();
             BindServices();
-
+            BindAudio();
+            
             StartGame();
         }
-
+        
         private void BindUtils()
         {
             var context = new GameObject("[MonoBehaviourContext]").AddComponent<MonoBehaviourContext>();
@@ -34,6 +38,19 @@ namespace _Project.Root
         private void BindServices()
         {
             Container.Bind<ISceneLoaderService>().To<SceneLoaderService>().FromNew().AsSingle().NonLazy();
+        }
+        
+        private void BindAudio()
+        {
+            var audioSource = new GameObject("[Audio]").AddComponent<AudioSource>();
+            DontDestroyOnLoad(audioSource.gameObject);
+            
+            AudioPlayer audioPlayer = new AudioPlayer(audioSource, _audioReferencesConfig);
+            AudioPlayer backgroundMusicPlayer = new AudioPlayer(audioSource, _audioReferencesConfig);
+
+            backgroundMusicPlayer.PlayBackgroundMusic();
+            
+            Container.Bind<AudioPlayer>().FromInstance(audioPlayer).AsSingle().NonLazy();
         }
 
         private void StartGame()

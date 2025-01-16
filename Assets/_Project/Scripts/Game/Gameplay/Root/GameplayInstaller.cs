@@ -1,4 +1,5 @@
-﻿using _Project.Data;
+﻿using _Project.Audio;
+using _Project.Data;
 using _Project.Game;
 using _Project.Utility;
 using UnityEngine;
@@ -61,6 +62,7 @@ namespace _Project.Gameplay
         {
             var gameplayDataProvider =  Container.Resolve<IGameplayDataProvider>();
             var levelFactory =  Container.Resolve<LevelFactory>();
+            var audioPlayer =  Container.Resolve<AudioPlayer>();
             
             int currentLevelNumber = gameplayDataProvider.GameplayDataProxy.LevelNumber.CurrentValue;
 
@@ -70,6 +72,8 @@ namespace _Project.Gameplay
             else
                 level = levelFactory.Create(currentLevelNumber);
 
+            level.Init(audioPlayer);
+            
             Container.Bind<Level>().FromInstance(level).AsSingle().NonLazy();
             
             int getRandomLevelNumber()
@@ -82,8 +86,9 @@ namespace _Project.Gameplay
         private void BindPlayer()
         {
             var skinService = Container.Resolve<ISkinService>();
+            var audioPlayer = Container.Resolve<AudioPlayer>();
             
-            _player.Init(_gameplayConfig.SkinConfigs, skinService);
+            _player.Init(_gameplayConfig.SkinConfigs, skinService, audioPlayer);
             _cameraSystem.Follow(_player.transform);
 
             Container.Bind<Player>().FromInstance(_player).AsSingle().NonLazy();

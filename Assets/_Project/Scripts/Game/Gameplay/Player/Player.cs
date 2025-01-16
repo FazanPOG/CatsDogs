@@ -1,4 +1,5 @@
-﻿using R3;
+﻿using _Project.Audio;
+using R3;
 using UnityEngine;
 
 namespace _Project.Gameplay
@@ -9,6 +10,7 @@ namespace _Project.Gameplay
         [SerializeField] private PlayerCollisionHandler _collisionHandler;
         [SerializeField] private PlayerView _playerView;
 
+        private AudioPlayer _audioPlayer;
         private InputHandler _inputHandler;
         private Movement _movement;
         private PlayerAnimalMorph _animalMorph;
@@ -16,11 +18,13 @@ namespace _Project.Gameplay
         
         public ReadOnlyReactiveProperty<float> MorphValue => _animalMorph.MorphValue;
         
-        public void Init(SkinConfig[] skinConfigs, ISkinService skinService)
+        public void Init(SkinConfig[] skinConfigs, ISkinService skinService, AudioPlayer audioPlayer)
         {
+            _audioPlayer = audioPlayer;
+            
             _inputHandler = new InputHandler();
             _movement = new Movement(_inputHandler, _playerConfig, transform);
-            _animalMorph = new PlayerAnimalMorph(Random.Range(0f, 1f));
+            _animalMorph = new PlayerAnimalMorph(Random.Range(0f, 1f), _audioPlayer);
             _playerView.Init(_playerConfig.AnimalViewPrefabs, _animalMorph, skinConfigs, skinService, _movement.OnMove);
             
             _isInit = true;
@@ -37,6 +41,7 @@ namespace _Project.Gameplay
 
         private void OnItemPicked(float morphValueChanged)
         {
+            _audioPlayer.PlayPlopAudio();
             if(morphValueChanged < 0)
                 _animalMorph.MoveValueLeft(Mathf.Abs(morphValueChanged));
             else

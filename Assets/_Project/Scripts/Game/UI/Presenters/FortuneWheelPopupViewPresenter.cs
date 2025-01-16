@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using _Project.API;
+using _Project.Audio;
 using _Project.Data;
 using _Project.Gameplay;
 using _Project.Utility;
@@ -29,6 +30,7 @@ namespace _Project.UI
         private readonly ILevelRewardService _levelRewardService;
         private readonly IADService _adService;
         private readonly MonoBehaviourContext _monoBehaviourContext;
+        private readonly AudioPlayer _audioPlayer;
 
         private int _moneyReward;
         
@@ -41,7 +43,8 @@ namespace _Project.UI
             IGameStateMachine gameStateMachine,
             ILevelRewardService levelRewardService,
             IADService adService,
-            MonoBehaviourContext monoBehaviourContext)
+            MonoBehaviourContext monoBehaviourContext,
+            AudioPlayer audioPlayer)
         {
             _view = view;
             _rewardViews = _view.FortuneWheelRewardViews;
@@ -53,6 +56,7 @@ namespace _Project.UI
             _levelRewardService = levelRewardService;
             _adService = adService;
             _monoBehaviourContext = monoBehaviourContext;
+            _audioPlayer = audioPlayer;
 
             Init();
         }
@@ -80,6 +84,7 @@ namespace _Project.UI
             int fullRotationsCount = Random.Range(3, 8);
             var randomConfig = _rewardConfigs[Random.Range(0, _rewardConfigs.Count)];
             _monoBehaviourContext.StartCoroutine(SpinCoroutine(fullRotationsCount, _rewardConfigs.IndexOf(randomConfig), randomConfig.ID, OnSpinStopped));
+            _audioPlayer.PlayClickAudio();
         }
 
         private void OnSpinStopped(string id)
@@ -94,8 +99,11 @@ namespace _Project.UI
         
         private void ShowAD()
         {
-            if(_adService.IsRewardedAvailable)
+            if (_adService.IsRewardedAvailable)
+            {
                 _adService.ShowRewarded(WHEEL_BONUS_REWARD_KEY);
+                _audioPlayer.PlayClickAudio();
+            }
         }
 
         private void OnRewarded(string key)
@@ -115,7 +123,8 @@ namespace _Project.UI
             _gameplayDataProvider.GameplayDataProxy.MoneyAmount.Value += _moneyReward;
             _gameplayDataProvider.SaveGameplayData();
             _view.Hide();
-            
+
+            _audioPlayer.PlayClickAudio();
             _gameStateMachine.EnterIn<ReloadGameState>();
         }
         

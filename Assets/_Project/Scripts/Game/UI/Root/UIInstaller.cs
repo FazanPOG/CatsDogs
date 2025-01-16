@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using _Project.API;
+using _Project.Audio;
 using _Project.Data;
 using _Project.Gameplay;
 using _Project.UI;
@@ -26,6 +27,7 @@ namespace _Project.Game
         [SerializeField] private LevelProgressView _levelProgressView;
         [SerializeField] private ButtonTextView _shopButton;
         [SerializeField] private PlayerMorphValueView _morphValueView;
+        [SerializeField] private SoundButtonView _soundButtonView;
         [Header("Popups")]
         [SerializeField] private ShopPopupView _shopPopupView;
         [SerializeField] private FortuneWheelPopupView _fortuneWheelPopupView;
@@ -44,11 +46,12 @@ namespace _Project.Game
             var levelRewardService = Container.Resolve<ILevelRewardService>();
             var localizationProvider = Container.Resolve<ILocalizationProvider>();
             var gameplayConfig = Container.Resolve<GameplayConfig>();
+            var audioPlayer = Container.Resolve<AudioPlayer>();
 
             foreach (var currencyView in _currencyViews)
                 new CurrencyViewPresenter(currencyView, gameplayDataProvider.GameplayDataProxy.MoneyAmount, _spriteReferences, gameStateProvider);
             
-            new TapToStartViewPresenter(_tapToStartView, gameStateMachine);
+            new TapToStartViewPresenter(_tapToStartView, gameStateMachine, audioPlayer);
             
             var levelProgressViewPresenter = new LevelProgressViewPresenter(
                 _levelProgressView, 
@@ -71,7 +74,8 @@ namespace _Project.Game
                 adService, 
                 skinService,
                 context,
-                localizationProvider);
+                localizationProvider,
+                audioPlayer);
             
             new FortuneWheelPopupViewPresenter(
                 _fortuneWheelPopupView,
@@ -82,7 +86,8 @@ namespace _Project.Game
                 gameStateMachine,
                 levelRewardService, 
                 adService,
-                context);
+                context,
+                audioPlayer);
 
             new ChestsRewardPopupViewPresenter(
                 _chestsRewardPopupView, 
@@ -94,6 +99,8 @@ namespace _Project.Game
                 adService);
 
             new PlayerMorphValueViewPresenter(_morphValueView, player.MorphValue);
+
+            new SoundButtonViewPresenter(_soundButtonView, audioPlayer);
         }
 
         private void OnValidate()

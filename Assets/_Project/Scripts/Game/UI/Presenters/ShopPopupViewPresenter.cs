@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using _Project.API;
+using _Project.Audio;
 using _Project.Data;
 using _Project.Gameplay;
 using _Project.Utility;
@@ -29,6 +30,7 @@ namespace _Project.UI
         private readonly ISkinService _skinService;
         private readonly MonoBehaviourContext _monoBehaviourContext;
         private readonly ILocalizationProvider _localizationProvider;
+        private readonly AudioPlayer _audioPlayer;
 
         private readonly ReactiveProperty<bool> _canSelectSkin = new ReactiveProperty<bool>();
         private readonly Dictionary<string, SelectSkinButtonViewPresenter> _idSkinButtonPresenterMap = new Dictionary<string, SelectSkinButtonViewPresenter>();
@@ -44,7 +46,8 @@ namespace _Project.UI
             IADService adService,
             ISkinService skinService,
             MonoBehaviourContext monoBehaviourContext,
-            ILocalizationProvider localizationProvider)
+            ILocalizationProvider localizationProvider,
+            AudioPlayer audioPlayer)
         {
             _shopButton = shopButton;
             _view = view;
@@ -57,6 +60,7 @@ namespace _Project.UI
             _skinService = skinService;
             _monoBehaviourContext = monoBehaviourContext;
             _localizationProvider = localizationProvider;
+            _audioPlayer = audioPlayer;
 
             Init();
         }
@@ -71,7 +75,7 @@ namespace _Project.UI
             foreach (var skinConfig in _skinConfigs)
             {
                 var skinButtonView = Object.Instantiate(_selectSkinButtonViewPrefab, _view.SkinButtonParentTransform);
-                var presenter = new SelectSkinButtonViewPresenter(skinButtonView, skinConfig, _gameplayDataProvider, _skinService, _canSelectSkin);
+                var presenter = new SelectSkinButtonViewPresenter(skinButtonView, skinConfig, _gameplayDataProvider, _skinService, _canSelectSkin, _audioPlayer);
                 _idSkinButtonPresenterMap.Add(skinConfig.ID, presenter);
             }
             
@@ -95,8 +99,11 @@ namespace _Project.UI
         
         private void OnBuyButtonClicked()
         {
-            if(CanBuy())
+            if (CanBuy())
+            {
                 Buy();
+                _audioPlayer.PlayClickAudio();
+            }
         }
 
         private void Buy()
@@ -144,18 +151,23 @@ namespace _Project.UI
 
         private void ShowAD()
         {
-            if(_adService.IsRewardedAvailable)
+            if (_adService.IsRewardedAvailable)
+            {
                 _adService.ShowRewarded(CURRENCY_AD_REWARD_KEY);
+                _audioPlayer.PlayClickAudio();
+            }
         }
 
         private void CloseShop()
         {
             _view.Hide();
+            _audioPlayer.PlayClickAudio();
         }
 
         private void OpenShop()
         {
             _view.Show();
+            _audioPlayer.PlayClickAudio();
         }
 
         private IEnumerator RandomUnlockAnimation(
@@ -176,7 +188,8 @@ namespace _Project.UI
                 var randomPresenter = lockedSkinPresenters[Random.Range(0, lockedSkinPresenters.Count)];
 
                 randomPresenter.SetActiveFrameImage(true);
-
+                _audioPlayer.PlayPlopAudio();
+                
                 yield return new WaitForSeconds(flashDuration);
 
                 randomPresenter.SetActiveFrameImage(false);
