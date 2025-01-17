@@ -1,4 +1,5 @@
-﻿using _Project.Audio;
+﻿using _Project.API;
+using _Project.Audio;
 using _Project.Data;
 using _Project.Game;
 using _Project.Utility;
@@ -101,6 +102,8 @@ namespace _Project.Gameplay
             var sceneLoaderService = Container.Resolve<ISceneLoaderService>();
             var monoBehaviourContext = Container.Resolve<MonoBehaviourContext>();
             var levelRewardService = Container.Resolve<ILevelRewardService>();
+            var apiEnvironmentService = Container.Resolve<IAPIEnvironmentService>();
+            var adService = Container.Resolve<IADService>();
             
             GameStateMachine gameStateMachine = new GameStateMachine(
                 _player, 
@@ -108,7 +111,9 @@ namespace _Project.Gameplay
                 gameplayDataProvider, 
                 sceneLoaderService, 
                 monoBehaviourContext,
-                levelRewardService);
+                levelRewardService,
+                apiEnvironmentService,
+                adService);
 
             Container.BindInterfacesTo<GameStateMachine>().FromInstance(gameStateMachine).AsSingle().NonLazy();
         }

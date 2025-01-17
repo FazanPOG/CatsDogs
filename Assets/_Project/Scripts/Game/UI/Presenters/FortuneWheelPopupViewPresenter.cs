@@ -31,6 +31,7 @@ namespace _Project.UI
         private readonly IADService _adService;
         private readonly MonoBehaviourContext _monoBehaviourContext;
         private readonly AudioPlayer _audioPlayer;
+        private readonly ILocalizationProvider _localizationProvider;
 
         private int _moneyReward;
         
@@ -44,7 +45,8 @@ namespace _Project.UI
             ILevelRewardService levelRewardService,
             IADService adService,
             MonoBehaviourContext monoBehaviourContext,
-            AudioPlayer audioPlayer)
+            AudioPlayer audioPlayer,
+            ILocalizationProvider localizationProvider)
         {
             _view = view;
             _rewardViews = _view.FortuneWheelRewardViews;
@@ -57,6 +59,7 @@ namespace _Project.UI
             _adService = adService;
             _monoBehaviourContext = monoBehaviourContext;
             _audioPlayer = audioPlayer;
+            _localizationProvider = localizationProvider;
 
             Init();
         }
@@ -69,7 +72,9 @@ namespace _Project.UI
             _view.SetSpinButtonActiveState(true);
             _view.SetTakeRewardButtonActiveState(false);
             _view.SetTakeADBonusedRewardButtonActiveState(false);
-
+            _view.SetSpinText(_localizationProvider.LocalizationAsset.GetTranslation(LocalizationKeys.SPIN_KEY));
+            _view.SetTakeRewardText(_localizationProvider.LocalizationAsset.GetTranslation(LocalizationKeys.TAKE_REWARD_KEY));
+            
             _gameStateProvider.GameState.Subscribe(HandleGameState);
             _view.OnSpinButtonClicked += SpinWheel;
             _view.OnTakeRewardButtonClicked += TakeReward;

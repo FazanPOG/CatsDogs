@@ -172,6 +172,9 @@
             </e>
           </e>
         </e>
+        <e p="AddressableAssetsData" t="Include">
+          <e p="link.xml" t="Include" />
+        </e>
         <e p="Packages" t="Include">
           <e p="Microsoft.Bcl.AsyncInterfaces.6.0.0" t="Include">
             <e p="lib" t="Include">
@@ -359,23 +362,6 @@
                 </e>
               </e>
               <e p="Modules" t="Include">
-                <e p="Unity.Addressables" t="Include">
-                  <e p="AddressablesInspectors.cs" t="Include" />
-                  <e p="Internal" t="Include">
-                    <e p="OdinAddressableReflection.cs" t="Include" />
-                    <e p="OdinAddressableReflectionValidator.cs" t="Include" />
-                  </e>
-                  <e p="manifest.txt" t="Include" />
-                  <e p="Sirenix.OdinInspector.Modules.Unity.Addressables.asmdef" t="Include" />
-                  <e p="Validators" t="Include">
-                    <e p="AssetLabelReferenceValidator.cs" t="Include" />
-                    <e p="AssetReferenceValidator.cs" t="Include" />
-                    <e p="CheckDuplicateBundleDependenciesValidator.cs" t="Include" />
-                    <e p="CheckResourcesToAddressableDuplicateDependenciesValidator.cs" t="Include" />
-                    <e p="DisallowAddressableSubAssetFieldAttributeValidator.cs" t="Include" />
-                    <e p="MissingAddressableGroupReferenceValidator.cs" t="Include" />
-                  </e>
-                </e>
                 <e p="Unity.Mathematics" t="Include">
                   <e p="manifest.txt" t="Include" />
                   <e p="MathematicsDrawers.cs" t="Include" />
@@ -1302,6 +1288,7 @@
                 <e p="ModifyIndexFile" t="Include">
                   <e p="AdWhenLoadingGame.cs" t="Include" />
                   <e p="BackgroundFormat.cs" t="Include" />
+                  <e p="BuildLogYG.txt" t="Include" />
                   <e p="LogoFormat.cs" t="Include" />
                   <e p="MetricaCounterID.cs" t="Include" />
                   <e p="ModifyBuildManager.cs" t="Include" />
@@ -1420,7 +1407,6 @@
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Polyperfect.Animals.csproj" t="IncludeRecursive" />
       <e p="Polyperfect.Common.csproj" t="IncludeRecursive" />
-      <e p="Sirenix.OdinInspector.Modules.Unity.Addressables.csproj" t="IncludeRecursive" />
       <e p="Sirenix.OdinInspector.Modules.UnityMathematics.csproj" t="IncludeRecursive" />
       <e p="Temp\Bin" t="ExcludeRecursive" />
       <e p="VFolders.csproj" t="IncludeRecursive" />

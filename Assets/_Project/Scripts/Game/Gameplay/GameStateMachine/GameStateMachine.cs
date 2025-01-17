@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Project.API;
 using _Project.Data;
 using _Project.Game;
 using _Project.Utility;
@@ -21,15 +22,17 @@ namespace _Project.Gameplay
             IGameplayDataProvider gameplayDataProvider,
             ISceneLoaderService sceneLoaderService,
             MonoBehaviourContext monoBehaviourContext,
-            ILevelRewardService levelRewardService)
+            ILevelRewardService levelRewardService,
+            IAPIEnvironmentService apiEnvironmentService,
+            IADService adService)
         {
             _gameStates = new Dictionary<Type, IGameState>()
             {
-                [typeof(BootState)] = new BootState(levelRewardService),
+                [typeof(BootState)] = new BootState(levelRewardService, apiEnvironmentService),
                 [typeof(GameplayState)] = new GameplayState(player, level, this),
                 [typeof(EndGameAnimationState)] = new EndGameAnimationState(monoBehaviourContext, this),
                 [typeof(WinState)] = new WinState(gameplayDataProvider, monoBehaviourContext),
-                [typeof(ReloadGameState)] = new ReloadGameState(sceneLoaderService),
+                [typeof(ReloadGameState)] = new ReloadGameState(sceneLoaderService, adService),
             };
         }
 

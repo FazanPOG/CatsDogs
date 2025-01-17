@@ -15,6 +15,8 @@ namespace _Project.API
                 [LocalizationKeys.LEVEL_KEY] = "Уровень",
                 [LocalizationKeys.HATS_KEY] = "Шляпы",
                 [LocalizationKeys.UNLOCK_KEY] = "Открыть",
+                [LocalizationKeys.SPIN_KEY] = "Крутить",
+                [LocalizationKeys.TAKE_REWARD_KEY] = "Забрать награду",
             };
         }
         

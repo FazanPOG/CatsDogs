@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e2b7cc25894139a426f0d383e29e42, type: 3}
   m_Name: DefaultDataConfig
   m_EditorClassIdentifier: 
-  _defaultMoney: 5000
+  _defaultMoney: 0
   _defaultLevelNumber: 1
   _defaultUnlockedSkins:
-  - {fileID: 11400000, guid: e1a319da098bc21449ec46840b0b5019, type: 2}
+  - {fileID: 11400000, guid: fd668d7635543b44984aa1c96a4cf250, type: 2}

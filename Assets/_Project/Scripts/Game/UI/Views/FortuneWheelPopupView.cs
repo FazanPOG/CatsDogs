@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,8 @@ namespace _Project.UI
 {
     public class FortuneWheelPopupView : MonoBehaviour
     {
+        [SerializeField] private TextMeshProUGUI _spinText;
+        [SerializeField] private TextMeshProUGUI _takeRewardText;
         [SerializeField] private Button _spinButton;
         [SerializeField] private Button _takeRewardButton;
         [SerializeField] private Button _takeADBonusedRewardButton;
@@ -30,6 +33,8 @@ namespace _Project.UI
         public void Show() => gameObject.SetActive(true);
         public void Hide() => gameObject.SetActive(false);
 
+        public void SetSpinText(string text) => _spinText.text = text;
+        public void SetTakeRewardText(string text) => _takeRewardText.text = text;
         public void SetSpinButtonActiveState(bool activeState) => _spinButton.gameObject.SetActive(activeState);
         public void SetTakeRewardButtonActiveState(bool activeState) => _takeRewardButton.gameObject.SetActive(activeState);
         public void SetTakeADBonusedRewardButtonActiveState(bool activeState) => _takeADBonusedRewardButton.gameObject.SetActive(activeState);

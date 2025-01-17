@@ -51,7 +51,7 @@ namespace _Project.Game
             foreach (var currencyView in _currencyViews)
                 new CurrencyViewPresenter(currencyView, gameplayDataProvider.GameplayDataProxy.MoneyAmount, _spriteReferences, gameStateProvider);
             
-            new TapToStartViewPresenter(_tapToStartView, gameStateMachine, audioPlayer);
+            new TapToStartViewPresenter(_tapToStartView, gameStateMachine, audioPlayer, localizationProvider);
             
             var levelProgressViewPresenter = new LevelProgressViewPresenter(
                 _levelProgressView, 
@@ -87,7 +87,8 @@ namespace _Project.Game
                 levelRewardService, 
                 adService,
                 context,
-                audioPlayer);
+                audioPlayer,
+                localizationProvider);
 
             new ChestsRewardPopupViewPresenter(
                 _chestsRewardPopupView, 

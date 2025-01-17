@@ -13,6 +13,8 @@ namespace _Project.Audio
             _audioReferencesConfig = audioReferencesConfig;
         }
 
+        public bool IsMuted => _audioSource.mute;
+        
         public void Mute() => _audioSource.mute = true;
         public void UnMute() => _audioSource.mute = false;
         

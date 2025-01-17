@@ -15,6 +15,8 @@ namespace _Project.API
                 [LocalizationKeys.LEVEL_KEY] = "Level",
                 [LocalizationKeys.HATS_KEY] = "Hats",
                 [LocalizationKeys.UNLOCK_KEY] = "Unlock",
+                [LocalizationKeys.SPIN_KEY] = "Spin",
+                [LocalizationKeys.TAKE_REWARD_KEY] = "Take reward",
             };
         }
         

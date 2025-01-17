@@ -14,12 +14,13 @@ namespace _Project.UI
             _soundButtonView = soundButtonView;
             _audioPlayer = audioPlayer;
 
-            _soundButtonView.SetUnMuteIcon();
+            _isMuted = audioPlayer.IsMuted;
+            HandleMute();
             
-            _soundButtonView.OnButtonClicked += OnButtonClicked;
+            _soundButtonView.OnButtonClicked += HandleMute;
         }
 
-        private void OnButtonClicked()
+        private void HandleMute()
         {
             if (_isMuted)
             {
